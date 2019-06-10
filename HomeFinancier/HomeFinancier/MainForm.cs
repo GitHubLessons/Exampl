@@ -41,7 +41,43 @@ namespace HomeFinancier
 
         private void btnFiller_Click(object sender, EventArgs e)
         {
-           
+
+            float Summ = 0;
+            if (dtpBegin.Value <= dtpEnd.Value)
+            {
+                filterData = new List<Spending>();
+                if (cmbCatecory.Text == string.Empty)
+                {
+
+                    for (int i = 0; i < Financier.spendingList.Count; i++)
+                    {
+
+                        if (Financier.spendingList[i].Date >= dtpBegin.Value & Financier.spendingList[i].Date <= dtpEnd.Value)
+                        {
+                            filterData.Add(Financier.spendingList[i]);
+                            Summ += Financier.spendingList[i].Summ;
+                        }
+                    }
+                }
+                else
+                {
+                    for (int i = 0; i < Financier.spendingList.Count; i++)
+                    {
+
+                        if ((Financier.spendingList[i].Date >= dtpBegin.Value & Financier.spendingList[i].Date <= dtpEnd.Value) & (Financier.spendingList[i].Category == cmbCatecory.Text))
+                        {
+                            filterData.Add(Financier.spendingList[i]);
+                            Summ += Financier.spendingList[i].Summ;
+                        }
+                    }
+                }
+
+                FillFillterTable(Summ);
+                label4.Text = "Всего: " + Summ.ToString() + "руб.";
+                GetCategoryForGrafic();
+
+            }
+
         }
 
         private async void btnAddCategory_Click(object sender, EventArgs e)
@@ -131,7 +167,12 @@ namespace HomeFinancier
 
         void FillFillterTable(float summ)
         {
-            
+            dgvFillterData.Rows.Clear();
+            for (int i = 0; i < filterData.Count; i++)
+            {
+                double res = filterData[i].Summ * 100 / summ;
+                dgvFillterData.Rows.Add(filterData[i].Date.ToShortDateString(), filterData[i].Category, filterData[i].Summ, res);
+            }
         }
 
         void FillComboBoxItem()
@@ -154,12 +195,49 @@ namespace HomeFinancier
 
         void GetCategoryForGrafic()
         {
-            
+            chartSpending.Series[0].Points.Clear();
+            dataforGrafik = new List<DataCategory>();
+            for (int i = 0; i < filterData.Count; i++)
+            {
+                if (dataforGrafik.Count == 0)
+                {
+                    dataforGrafik.Add(new DataCategory(filterData[i].Category, filterData[i].Summ));
+                }
+                else
+                {
+                    bool find = false;
+                    for (int j = 0; j < dataforGrafik.Count; j++)
+                    {
+                        if (dataforGrafik[j].Name == filterData[i].Category)
+                        {
+                            dataforGrafik[j].Summ += filterData[i].Summ;
+                            find = true;
+                            break;
+                        }
+                    }
+                    if (!find)
+                    {
+                        dataforGrafik.Add(new DataCategory(filterData[i].Category, filterData[i].Summ));
+                    }
+                }
+
+
+            }
+
+            for (int i = 0; i < dataforGrafik.Count; i++)
+            {
+                chartSpending.Series[0].Points.AddY(Convert.ToDouble(dataforGrafik[i].Summ));
+                chartSpending.Series[0].Points[i].LegendText = dataforGrafik[i].Name;
+            }
         }
 
         private void btnClearFilter_Click(object sender, EventArgs e)
         {
-           
+            dtpBegin.Value = DateTime.Now;
+            dtpEnd.Value = DateTime.Now;
+            cmbCatecory.Text = string.Empty;
+            dgvFillterData.Rows.Clear();
+            chartSpending.Series[0].Points.Clear();
         }
     }
 }
