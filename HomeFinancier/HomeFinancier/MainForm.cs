@@ -26,17 +26,82 @@ namespace HomeFinancier
 
         private async void btnAdd_Click(object sender, EventArgs e)
         {
-          
+            Financier.CurrentSpending = new Spending();
+            FAddChange fAdd = new FAddChange();
+            fAdd.ShowDialog();
+            if (fAdd.DialogResult == DialogResult.OK)
+            {
+                SqlCommand command = new SqlCommand("INSERT  INTO [Spending] (Name,Quantity, Summ, Category, Date )  VALUES (@Name, @Quantity, @Summ, @Category, @Date)", sqlConnection);
+
+                command.Parameters.AddWithValue("@Name", Financier.CurrentSpending.Value);
+                command.Parameters.AddWithValue("@Date", Financier.CurrentSpending.Date);
+                command.Parameters.AddWithValue("@Quantity", Financier.CurrentSpending.Quantity);
+                command.Parameters.AddWithValue("@Summ", Financier.CurrentSpending.Summ);
+                command.Parameters.AddWithValue("@Category", Financier.CurrentSpending.Category);
+                await command.ExecuteNonQueryAsync();
+                FillSpendingTable();
+            }
         }
 
         private async void btnUpdate_Click(object sender, EventArgs e)
         {
-            
+            int selectedRowIndex = dgvSpending.CurrentRow.Index;
+            MessageBox.Show("id = " + dgvSpending[0, selectedRowIndex].Value.ToString());
+            if (selectedRowIndex != dgvSpending.Rows.Count - 1)
+            {
+                Financier.CurrentSpending = Financier.FinfSpending(int.Parse(dgvSpending[0, selectedRowIndex].Value.ToString()));
+                FAddChange fAddChange = new FAddChange();
+                fAddChange.ShowDialog();
+                if (fAddChange.DialogResult == DialogResult.OK)
+                {
+                    FillSpendingTable();
+                    try
+                    {
+
+                        SqlCommand command = new SqlCommand("UPDATE  [Spending] SET [Name] =@Name, [Quantity] =@Quantity, [Summ]=@Summ,[Category] = @Category, [Date] =@date WHERE id = @id", sqlConnection);
+                        command.Parameters.AddWithValue("@id", Financier.CurrentSpending.ID);
+                        command.Parameters.AddWithValue("@Name", Financier.CurrentSpending.Value);
+                        command.Parameters.AddWithValue("@Date", Financier.CurrentSpending.Date);
+                        command.Parameters.AddWithValue("@Quantity", Financier.CurrentSpending.Quantity);
+                        command.Parameters.AddWithValue("@Summ", Financier.CurrentSpending.Summ);
+                        command.Parameters.AddWithValue("@Category", Financier.CurrentSpending.Category);
+                        await command.ExecuteNonQueryAsync();
+
+                    }
+                    catch (Exception exp)
+                    {
+                        MessageBox.Show(exp.Message);
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Нет выбранных строк!");
+            }
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-           
+            int selectedRowIndex = dgvSpending.CurrentRow.Index;
+            if (selectedRowIndex != dgvSpending.Rows.Count - 1)
+            {
+                Financier.DeleteSpending(int.Parse(dgvSpending[0, selectedRowIndex].Value.ToString()));
+                try
+                {
+                    SqlCommand command = new SqlCommand("DELETE FROM spending WHERE id = @id", sqlConnection);
+                    command.Parameters.AddWithValue("@id", dgvSpending[0, selectedRowIndex].Value);
+                    command.ExecuteNonQuery();
+                    FillSpendingTable();
+                }
+                catch (Exception exp)
+                {
+                    MessageBox.Show(exp.Message);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Нет выбранных строк!");
+            }
         }
 
         private void btnFiller_Click(object sender, EventArgs e)
