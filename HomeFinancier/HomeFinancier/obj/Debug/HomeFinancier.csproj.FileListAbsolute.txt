@@ -1,0 +1,26 @@
+D:\ИНСТИТУТ\Коллективная разработка По\Лаб 1\GitHubLessons\HomeFinancier\HomeFinancier\bin\Debug\HomeFinancier.exe.config
+D:\ИНСТИТУТ\Коллективная разработка По\Лаб 1\GitHubLessons\HomeFinancier\HomeFinancier\bin\Debug\HomeFinancier.exe
+D:\ИНСТИТУТ\Коллективная разработка По\Лаб 1\GitHubLessons\HomeFinancier\HomeFinancier\bin\Debug\HomeFinancier.pdb
+D:\ИНСТИТУТ\Коллективная разработка По\Лаб 1\GitHubLessons\HomeFinancier\HomeFinancier\obj\Debug\HomeFinancier.csprojResolveAssemblyReference.cache
+D:\ИНСТИТУТ\Коллективная разработка По\Лаб 1\GitHubLessons\HomeFinancier\HomeFinancier\obj\Debug\HomeFinancier.Properties.Resources.resources
+D:\ИНСТИТУТ\Коллективная разработка По\Лаб 1\GitHubLessons\HomeFinancier\HomeFinancier\obj\Debug\HomeFinancier.csproj.GenerateResource.Cache
+D:\ИНСТИТУТ\Коллективная разработка По\Лаб 1\GitHubLessons\HomeFinancier\HomeFinancier\obj\Debug\HomeFinancier.exe
+D:\ИНСТИТУТ\Коллективная разработка По\Лаб 1\GitHubLessons\HomeFinancier\HomeFinancier\obj\Debug\HomeFinancier.pdb
+D:\ИНСТИТУТ\Коллективная разработка По\Лаб 1\GitHubLessons\HomeFinancier\HomeFinancier\obj\Debug\HomeFinancier.MainForm.resources
+D:\ИНСТИТУТ\Коллективная разработка По\Лаб 1\GitHubLessons\HomeFinancier\HomeFinancier\bin\Debug\HomeFinancierData.mdf
+D:\ИНСТИТУТ\Коллективная разработка По\Лаб 1\GitHubLessons\HomeFinancier\HomeFinancier\bin\Debug\HomeFinancierData_log.ldf
+D:\ИНСТИТУТ\Коллективная разработка По\Лаб 1\GitHubLessons\HomeFinancier\HomeFinancier\obj\Debug\HomeFinancier.FAddChange.resources
+D:\ИНСТИТУТ\Коллективная разработка По\Лаб 1\GitHubLessons\HomeFinancier\HomeFinancier\obj\Debug\HomeFinancier.FCategory.resources
+D:\ИНСТИТУТ\Коллективная разработка По\Example\GithubLessons\HomeFinancier\HomeFinancier\bin\Debug\HomeFinancier.exe.config
+D:\ИНСТИТУТ\Коллективная разработка По\Example\GithubLessons\HomeFinancier\HomeFinancier\obj\Debug\HomeFinancier.exe
+D:\ИНСТИТУТ\Коллективная разработка По\Example\GithubLessons\HomeFinancier\HomeFinancier\obj\Debug\HomeFinancier.pdb
+D:\ИНСТИТУТ\Коллективная разработка По\Example\GithubLessons\HomeFinancier\HomeFinancier\bin\Debug\HomeFinancierData.mdf
+D:\ИНСТИТУТ\Коллективная разработка По\Example\GithubLessons\HomeFinancier\HomeFinancier\bin\Debug\HomeFinancierData_log.ldf
+D:\ИНСТИТУТ\Коллективная разработка По\Example\GithubLessons\HomeFinancier\HomeFinancier\bin\Debug\HomeFinancier.exe
+D:\ИНСТИТУТ\Коллективная разработка По\Example\GithubLessons\HomeFinancier\HomeFinancier\bin\Debug\HomeFinancier.pdb
+D:\ИНСТИТУТ\Коллективная разработка По\Example\GithubLessons\HomeFinancier\HomeFinancier\obj\Debug\HomeFinancier.csprojResolveAssemblyReference.cache
+D:\ИНСТИТУТ\Коллективная разработка По\Example\GithubLessons\HomeFinancier\HomeFinancier\obj\Debug\HomeFinancier.FAddChange.resources
+D:\ИНСТИТУТ\Коллективная разработка По\Example\GithubLessons\HomeFinancier\HomeFinancier\obj\Debug\HomeFinancier.FCategory.resources
+D:\ИНСТИТУТ\Коллективная разработка По\Example\GithubLessons\HomeFinancier\HomeFinancier\obj\Debug\HomeFinancier.MainForm.resources
+D:\ИНСТИТУТ\Коллективная разработка По\Example\GithubLessons\HomeFinancier\HomeFinancier\obj\Debug\HomeFinancier.Properties.Resources.resources
+D:\ИНСТИТУТ\Коллективная разработка По\Example\GithubLessons\HomeFinancier\HomeFinancier\obj\Debug\HomeFinancier.csproj.GenerateResource.Cache
