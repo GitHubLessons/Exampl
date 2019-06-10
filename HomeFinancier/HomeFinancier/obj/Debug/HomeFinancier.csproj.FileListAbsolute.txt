@@ -30,3 +30,6 @@ D:\ИНСТИТУТ\Коллективная разработка По\Example\k
 D:\ИНСТИТУТ\Коллективная разработка По\Example\GithubLessons\Example-master\Example-master\HomeFinancier\HomeFinancier\bin\Debug\HomeFinancier.exe.config
 D:\ИНСТИТУТ\Коллективная разработка По\Example\GithubLessons\Example-master\Example-master\HomeFinancier\HomeFinancier\obj\Debug\HomeFinancier.exe
 D:\ИНСТИТУТ\Коллективная разработка По\Example\GithubLessons\Example-master\Example-master\HomeFinancier\HomeFinancier\obj\Debug\HomeFinancier.pdb
+D:\ИНСТИТУТ\Коллективная разработка По\Example\k-tatyana\2\Example-master\Example-master\HomeFinancier\HomeFinancier\bin\Debug\HomeFinancier.exe.config
+D:\ИНСТИТУТ\Коллективная разработка По\Example\k-tatyana\2\Example-master\Example-master\HomeFinancier\HomeFinancier\obj\Debug\HomeFinancier.exe
+D:\ИНСТИТУТ\Коллективная разработка По\Example\k-tatyana\2\Example-master\Example-master\HomeFinancier\HomeFinancier\obj\Debug\HomeFinancier.pdb

@@ -147,7 +147,16 @@ namespace HomeFinancier
 
         private async void btnAddCategory_Click(object sender, EventArgs e)
         {
-           
+            FCategory fAdd = new FCategory();
+            Financier.CurrentCategory = string.Empty;
+            fAdd.ShowDialog();
+            if (fAdd.DialogResult == DialogResult.OK)
+            {
+                SqlCommand command = new SqlCommand("INSERT  INTO [Category] (Name)  VALUES (@Name)", sqlConnection);
+                command.Parameters.AddWithValue("@Name", Financier.CurrentCategory);
+                await command.ExecuteNonQueryAsync();
+                FillCategoryTable();
+            }
         }
 
         private async void MainForm_Load(object sender, EventArgs e)
